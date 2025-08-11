@@ -1,181 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicketSys - Support Ticketing System</title>
+    <title>JantaMart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .navbar-dark .navbar-nav .nav-link {
-            color: #ffffff;
-            margin-left: 15px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-dark .navbar-nav .nav-link:hover {
-            color: #ffc107;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            padding: 120px 20px 80px;
-            text-align: center;
-        }
-
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-        }
-
-        .hero-section p {
-            font-size: 1.3rem;
-            margin-top: 20px;
-        }
-
-        .hero-section .btn {
-            margin-top: 30px;
-            padding: 10px 30px;
-            font-size: 1rem;
-        }
-
-        .api-section {
-            padding: 60px 20px;
-            background-color: #f8f9fa;
-        }
-
-        .api-section .card {
-            border: none;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-        }
-
-        .api-section .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .api-section .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-
-        footer {
-            background: #1c1c1c;
-            color: #ccc;
-            padding: 40px 0;
-        }
-
-        footer a {
-            color: #ccc;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            color: #ffc107;
-        }
-
-        footer i {
-            margin-right: 8px;
-        }
-    .ticket-logo {
-    color: white;
-    text-decoration: none;
-    font-size: 1.3rem;
-}
-
-.animated-icon {
-    background: linear-gradient(270deg, #ffcc00, #00c8ff, #ff00c8, #ffcc00);
-    background-size: 600% 600%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientMove 5s ease infinite;
-    font-size: 1.5rem;
-    text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
-}
-
-.ticket-logo:hover .animated-icon {
-    text-shadow: 0 0 15px rgba(255, 204, 0, 1);
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-
-    </style>
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 shadow-sm">
-    <a class="navbar-brand fw-bold d-flex align-items-center ticket-logo" href="#">
-        <i class="fas fa-ticket-alt me-2 animated-icon"></i>
-        TicketSys
-    </a>
+   <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top"
+    style="background: linear-gradient(90deg, #0f2027, #203a43, #2c5364); width: 100%;">
+        <div class="container-fluid px-5">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <!-- Brand on the left -->
+            <a class="navbar-brand fw-bold d-flex align-items-center ticket-logo" href="#">
+                <i class="fas fa-ticket-alt me-2 animated-icon"></i>
+                JantaMart
+            </a>
 
-    <div class="collapse navbar-collapse" id="mainNavbar">
-        {{-- Left links --}}
-        <ul class="navbar-nav ms-5">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Tickets</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
-        </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        {{-- Right links --}}
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="{{ route('register.form') }}">Register</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-        </ul>
-    </div>
-</nav>
+            <div class="collapse navbar-collapse" id="mainNavbar">
 
+                <!-- Left side (empty for spacing if needed) -->
+                <ul class="navbar-nav me-auto"></ul>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1>Welcome to <span style="color: #ffc107;">TicketSys</span></h1>
-            <p>Fast and simple support ticket management for your business</p>
-            <a href="{{ route('register.form') }}" class="btn btn-warning text-dark rounded-pill">Get Started</a>
+                <!-- Center: Search bar -->
+                <form class="d-flex mx-auto search-bar" style="max-width: 350px; width: 100%;">
+                    <input class="form-control rounded-start-pill shadow-sm border-0" type="search"
+                        placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-warning rounded-end-pill shadow-sm" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+
+                <!-- Right side -->
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item me-4">
+                        <a href="#" class="btn btn-gradient rounded-pill btn-sm px-3">Become a Seller</a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link position-relative icon-hover" href="#">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-gradient rounded-pill btn-sm px-3" href="{{ route('login') }}">
+                            <i class="fas fa-user me-1"></i> Login
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
         </div>
-    </section>
+    </nav>
 
-    {{-- Page Content --}}
-    <main>
+
+    <!-- Main Content -->
+    <main class="fluid-container mt-0 mb-5">
         @yield('content')
     </main>
+    
 
-    {{-- Footer --}}
+
+    <!-- Footer -->
     <footer class="mt-5">
-        <div class="container text-center">
-            <p class="mb-2">&copy; {{ date('Y') }} <strong>TicketSys</strong>. All rights reserved.</p>
-            <div class="mb-2">
-                <a href="#"><i class="fas fa-shield-alt"></i> Privacy</a>
-                <a href="#"><i class="fas fa-file-contract"></i> Terms</a>
-                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold"><i class="fas fa-ticket-alt me-2 animated-icon"></i> JantaMart</h5>
+                    <p class="small">Your trusted marketplace for everything you need.</p>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                    <a href="#">Privacy</a> |
+                    <a href="#">Terms</a> |
+                    <a href="#">Contact</a>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-pill me-2">Become a Seller</a>
+                    <a href="{{ route('login') }}" class="btn btn-warning btn-sm rounded-pill text-dark">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                </div>
             </div>
-            <div>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <hr class="border-secondary mt-3">
+            <div class="d-flex justify-content-between flex-wrap small text-center text-md-start">
+                <span>&copy; {{ date('Y') }} JantaMart. All rights reserved.</span>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
