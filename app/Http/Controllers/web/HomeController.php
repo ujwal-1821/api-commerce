@@ -18,6 +18,6 @@ class HomeController extends Controller
         dd("API failed", $response->status(), $response->body());
     }
 
-    return view('layouts.welcome', compact('items'));
+    return view('home', compact('items'));
 }
 }
