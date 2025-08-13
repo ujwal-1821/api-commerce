@@ -1,4 +1,8 @@
 @extends('layouts.master')
+  @push('title')
+    <title>Janta-Mart</title>
+        
+    @endpush
 @section('content')
     <!-- Carousel Section -->
     <section class="mb-0">
@@ -26,7 +30,7 @@
     <!-- Top Deals Section -->
     <section class="container my-3">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h3 class="fw-bold mb-1">🔥 Top Deals</h3>
+            <h3 class=" mb-0">Top Deals</h3>
             <a href="#" class="btn btn-success btn-sm px-3">View All</a>
         </div>
         <div class="row">

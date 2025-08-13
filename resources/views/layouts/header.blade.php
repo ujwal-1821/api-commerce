@@ -3,7 +3,7 @@
         <div class="container-fluid px-5">
 
             <!-- Brand on the left -->
-            <a class="navbar-brand fw-bold d-flex align-items-center ticket-logo" href="#">
+            <a class="navbar-brand fw-bold d-flex align-items-center ticket-logo" href="{{ route('home') }}">
                 <i class="fas fa-ticket-alt me-2 animated-icon"></i>
                 Janta-Mart
             </a>
@@ -50,7 +50,7 @@
     </nav>
     <div class="bg-light shadow-sm py-3 mb-0 sticky-top" style="top: 56px; z-index: 1020;">
         <div class="d-flex justify-content-center flex-wrap">
-            <a class="nav-link text-dark px-4" href="#">Mobile</a>
+            <a class="nav-link text-dark px-4" href="{{ url('category/electronics') }}">Electronics</a>
             <a class="nav-link text-dark px-4" href="#">Fashion</a>
             <a class="nav-link text-dark px-4" href="#">Electronics</a>
             <a class="nav-link text-dark px-4" href="#">Furniture</a>
