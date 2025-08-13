@@ -28,7 +28,7 @@
                 <img src="{{ asset('assets/images/img12.jpg') }}" class="card-img-top" alt="Wireless Earbuds">
                 <div class="card-body text-center">
                     <h5 class="fw-semibold">Gaming</h5>
-                    <a href="{{ url('category/electronics/tv') }}" class="btn btn-success btn-sm">View Details</a>
+                    <a href="{{ url('electronics/categoryName') }}" class="btn btn-success btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <img src="{{ asset('assets/images/img9.jpg') }}" class="card-img-top" alt="Smart Watch">
                 <div class="card-body text-center">
                      <h5 class="fw-semibold">SmartPhone</h5>
-                    <a href="{{ url('category/electronics/smart') }}" class="btn btn-success btn-sm">View Details</a>
+                    <a href="{{ url('electronics/categoryName') }}" class="btn btn-success btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <img src="{{ asset('assets/images/img10.jpg') }}" class="card-img-top" alt="Bluetooth Speaker">
                 <div class="card-body text-center">
                     <h5 class="fw-semibold">Tablets</h5>
-                    <a href="{{ url('category/electronics/speaker') }}" class="btn btn-success btn-sm">View Details</a>
+                    <a href="{{ url('electronics/categoryName') }}" class="btn btn-success btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                 <img src="{{ asset('assets/images/img12.jpg') }}" class="card-img-top" alt="Gaming Mouse">
                 <div class="card-body text-center">
                     <h5 class="fw-semibold">Storage</h5>
-                    <a href="{{ url('category/electronics/game') }}" class="btn btn-success btn-sm">View Details</a>
+                    <a href="{{ url('electronics/categoryName') }}" class="btn btn-success btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
                 <img src="{{ asset('assets/images/img9.jpg') }}" class="card-img-top" alt="Gaming Mouse">
                 <div class="card-body text-center">
                     <h5 class="fw-semibold">Laptop and Accessiors</h5>
-                    <a href="{{ url('category/electronics/mouse') }}" class="btn btn-success btn-sm">View Details</a>
+                    <a href="{{ url('electronics/categoryName') }}" class="btn btn-success btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                 <img src="{{ asset('assets/images/img10.jpg') }}" class="card-img-top" alt="Gaming Mouse">
                 <div class="card-body text-center">
                     <h5 class="fw-semibold">Comuter</h5>
-                 <a href="{{ url('category/electronics/mike') }}" class="btn btn-success btn-sm">View Details</a>
+                 <a href="{{ url('electronics/categoryName') }}" class="btn btn-success btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
                 <img src="{{ asset('assets/images/img10.jpg') }}" class="card-img-top" alt="Gaming Mouse">
                 <div class="card-body text-center">
                     <h5 class="fw-semibold">PowerBank</h5>
-                    <a href="{{ url('category/electronics/gameing') }}" class="btn btn-success btn-sm">View Details</a>
+                    <a href="{{ url('electronics/categoryName') }}" class="btn btn-success btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
                 <img src="{{ asset('assets/images/img9.jpg') }}" class="card-img-top" alt="Gaming Mouse">
                 <div class="card-body text-center">
                     <h5 class="fw-semibold">Camera & Accesiors</h5>
-                    <a href="{{ url('category/electronics/keyword') }}" class="btn btn-success btn-sm">View Details</a>
+                    <a href="{{ url('electronics/categoryName') }}" class="btn btn-success btn-sm">View Details</a>
                 </div>
             </div>
         </div>

@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
-@section('title', 'TV Subcategory')
+@push('title')
+<title>subcategory</title>
+
+@endpush
 
 @section('content')
 <section class="container-fluid my-0">
@@ -28,7 +31,7 @@
                 <div class="card-body text-center">
                     <h6 class="fw-semibold">Samsung 55" Smart TV</h6>
                     <p class="text-success fw-bold mb-1">$499.99</p>
-                    <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                    <a href="{{ url('categoryName/productName')}}" class="btn btn-primary btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -39,7 +42,7 @@
                 <div class="card-body text-center">
                     <h6 class="fw-semibold">LG 65" 4K Ultra HD</h6>
                     <p class="text-success fw-bold mb-1">$799.99</p>
-                    <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                    <a href="{{ url('categoryName/productName')}}" class="btn btn-primary btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -50,7 +53,7 @@
                 <div class="card-body text-center">
                     <h6 class="fw-semibold">Sony Bravia 50"</h6>
                     <p class="text-success fw-bold mb-1">$599.99</p>
-                    <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                    <a href="{{ url('categoryName/productName')}}" class="btn btn-primary btn-sm">View Details</a>
                 </div>
             </div>
         </div>
@@ -61,7 +64,7 @@
                 <div class="card-body text-center">
                     <h6 class="fw-semibold">TCL Roku 43"</h6>
                     <p class="text-success fw-bold mb-1">$349.99</p>
-                    <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                    <a href="{{ url('categoryName/productName')}}" class="btn btn-primary btn-sm">View Details</a>
                 </div>
             </div>
         </div>
