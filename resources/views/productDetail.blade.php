@@ -1,8 +1,9 @@
 @extends('layouts.master')
-@push('title')
-<title>product-detail</title>
 
+@push('title')
+<title>Product Detail</title>
 @endpush
+
 @section('content')
 <div class="container py-5">
 
@@ -11,7 +12,10 @@
         <!-- Left: Image -->
         <div class="col-md-5">
             <div class="border rounded p-3 shadow-sm bg-white">
-                <img src="{{ asset('assets/images/img9.jpg') }}" class="img-fluid rounded" alt="Samsung 55 Smart TV">
+                <img src="{{ asset('assets/images/img12.jpg') }}" 
+                     class="img-fluid rounded" 
+                     alt="Samsung 55 Smart TV" 
+                     loading="lazy">
             </div>
         </div>
 
@@ -22,9 +26,7 @@
 
             <!-- Rating -->
             <div class="mb-2">
-                <span class="text-warning fs-5">
-                    ★★★★☆
-                </span>
+                <span class="text-warning fs-5">★★★★☆</span>
                 <small class="text-muted">(4.2 / 5 from 120 ratings)</small>
             </div>
 
@@ -50,17 +52,31 @@
     <div class="mt-5">
         <h4 class="fw-semibold mb-4">Customer Reviews</h4>
 
-        <div class="border rounded p-3 mb-3 shadow-sm">
-            <strong>John Doe</strong> <span class="text-warning">★★★★☆</span>
-            <p class="mb-1">Great picture quality, and the sound is excellent for a built-in speaker.</p>
-            <small class="text-muted">Reviewed on Jan 15, 2025</small>
-        </div>
+        @php
+            $reviews = [
+                [
+                    'name' => 'John Doe',
+                    'rating' => '★★★★☆',
+                    'text' => 'Great picture quality, and the sound is excellent for a built-in speaker.',
+                    'date' => 'Jan 15, 2025'
+                ],
+                [
+                    'name' => 'Sarah Lee',
+                    'rating' => '★★★☆☆',
+                    'text' => 'Good value for the price, but the remote control could be better.',
+                    'date' => 'Feb 02, 2025'
+                ]
+            ];
+        @endphp
 
-        <div class="border rounded p-3 mb-3 shadow-sm">
-            <strong>Sarah Lee</strong> <span class="text-warning">★★★☆☆</span>
-            <p class="mb-1">Good value for the price, but the remote control could be better.</p>
-            <small class="text-muted">Reviewed on Feb 02, 2025</small>
-        </div>
+        @foreach($reviews as $review)
+            <div class="border rounded p-3 mb-3 shadow-sm">
+                <strong>{{ $review['name'] }}</strong> 
+                <span class="text-warning">{{ $review['rating'] }}</span>
+                <p class="mb-1">{{ $review['text'] }}</p>
+                <small class="text-muted">Reviewed on {{ $review['date'] }}</small>
+            </div>
+        @endforeach
 
         <a href="#" class="btn btn-outline-primary btn-sm">Write a Review</a>
     </div>
@@ -69,49 +85,32 @@
     <div class="mt-5">
         <h4 class="fw-semibold mb-4">Similar Products</h4>
         <div class="row">
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="card shadow-sm border-0 h-100">
-                    <img src="{{ asset('assets/images/img1.jpg') }}" class="card-img-top" alt="Smart TV 2">
-                    <div class="card-body text-center">
-                        <h6 class="fw-semibold">LG 50" Smart TV</h6>
-                        <p class="text-success fw-bold mb-1">$399.99</p>
-                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+            @php
+                $products = [
+                    ['name' => 'LG 50" Smart TV', 'price' => '$399.99', 'img' => 'img1.jpg'],
+                    ['name' => 'Sony Bravia 55"', 'price' => '$549.99', 'img' => 'img2.jpg'],
+                    ['name' => 'Panasonic 50" 4K TV', 'price' => '$429.99', 'img' => 'img3.jpg'],
+                    ['name' => 'Samsung 43" Smart TV', 'price' => '$349.99', 'img' => 'img4.jpg'],
+                ];
+            @endphp
+
+            @foreach($products as $product)
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card shadow-sm border-0 h-100">
+                        <img src="{{ asset('assets/images/' . $product['img']) }}" 
+                             class="card-img-top" 
+                             alt="{{ $product['name'] }}" 
+                             loading="lazy">
+                        <div class="card-body text-center">
+                            <h6 class="fw-semibold">{{ $product['name'] }}</h6>
+                            <p class="text-success fw-bold mb-1">{{ $product['price'] }}</p>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="card shadow-sm border-0 h-100">
-                    <img src="{{ asset('assets/images/img2.jpg') }}" class="card-img-top" alt="Smart TV 3">
-                    <div class="card-body text-center">
-                        <h6 class="fw-semibold">Sony Bravia 55"</h6>
-                        <p class="text-success fw-bold mb-1">$549.99</p>
-                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="card shadow-sm border-0 h-100">
-                    <img src="{{ asset('assets/images/img2.jpg') }}" class="card-img-top" alt="Smart TV 3">
-                    <div class="card-body text-center">
-                        <h6 class="fw-semibold">Sony Bravia 55"</h6>
-                        <p class="text-success fw-bold mb-1">$549.99</p>
-                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="card shadow-sm border-0 h-100">
-                    <img src="{{ asset('assets/images/img2.jpg') }}" class="card-img-top" alt="Smart TV 3">
-                    <div class="card-body text-center">
-                        <h6 class="fw-semibold">Sony Bravia 55"</h6>
-                        <p class="text-success fw-bold mb-1">$549.99</p>
-                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more similar products as needed -->
+            @endforeach
         </div>
     </div>
+
 </div>
 @endsection
-
